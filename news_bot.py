@@ -28,9 +28,10 @@ async def get_news():
     return news
 
 async def send_notification(new_titles):
-    for title in new_titles:
-        await bot.send_message(chat_id=CHAT_ID, text=f"📰 Новая новость: {title}")
-        await asyncio.sleep(1.5)  # Задержка в 1.5 секунды между сообщениями
+        if new_titles:
+            message = "📰 Новые новости:\n\n" + "\n".join([f"- {title}" for title in new_titles])
+            await bot.send_message(chat_id=CHAT_ID, text=message)
+            await asyncio.sleep(1.5)  # Задержка в 1.5 секунды между сообщениями
 
 async def main():
     global processed_news
