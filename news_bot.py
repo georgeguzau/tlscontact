@@ -4,7 +4,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 URL = "https://it.tlscontact.com/by/msq/page.php?pid=news&l=ru"
-BOT_TOKEN = "7593192564:AAFwcc6SI4fhhTBOR7uSjxi9KOiUClZXR6Y"
+BOT_TOKEN = "8041916387:AAGEQF3nfSL0TZZPOfSPs2aY50j1LpQR2SY"
 CHAT_ID = 572006051
 CHECK_INTERVAL = 60
 
