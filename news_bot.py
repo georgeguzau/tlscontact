@@ -7,7 +7,6 @@ URL = "https://it.tlscontact.com/by/msq/page.php?pid=news&l=ru"
 BOT_TOKEN = "7593192564:AAFwcc6SI4fhhTBOR7uSjxi9KOiUClZXR6Y"
 CHAT_ID = 572006051
 CHECK_INTERVAL = 60
-ALLOWED_USER_ID = 572006051
 
 # Инициализация бота
 bot = Bot(token=BOT_TOKEN)
@@ -31,10 +30,7 @@ async def get_news():
 
 async def send_notification(new_titles):
     for title in new_titles:
-        if CHAT_ID == ALLOWED_USER_ID:
-            await bot.send_message(chat_id=CHAT_ID, text=f"📰 Новая новость: {title}")
-        else:
-            print("Попытка отправки сообщения неавторизованному пользователю")
+        await bot.send_message(chat_id=CHAT_ID, text=f"📰 Новая новость: {title}")
 
 async def main():
     global processed_news
